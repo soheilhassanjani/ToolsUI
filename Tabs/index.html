@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabs__nav-link--select {
+            background-color: #100c3e;
+        }
+
+        .tabs__pane {
+            display: none;
+        }
+
+        .tabs__pane--select {
+            display: block;
+            animation: fadeIn 400ms ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tab 1</h1>
+
+    <div id="node-1" class="tabs" data-tab>
+        <div class="tabs__navs">
+            <div class="tabs__nav-link" data-tab-num="1">اولی</div>
+            <div class="tabs__nav-link tabs__nav-link--select" data-tab-num="2">دومی</div>
+            <div class="tabs__nav-link" data-tab-num="3">سومی</div>
+        </div>
+        <div class="tabs__content">
+            <div class="tabs__pane">001</div>
+            <div class="tabs__pane tabs__pane--select">002</div>
+            <div class="tabs__pane">003</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1>Tab 2</h1>
+
+    <div id="node-2" class="tabs" data-tab>
+        <div class="tabs__navs">
+            <div class="tabs__nav-link" data-tab-num="1">اولی</div>
+            <div class="tabs__nav-link tabs__nav-link--select" data-tab-num="2">دومی</div>
+            <div class="tabs__nav-link" data-tab-num="3">سومی</div>
+        </div>
+        <div class="tabs__content">
+            <div class="tabs__pane">001</div>
+            <div class="tabs__pane tabs__pane--select">002</div>
+            <div class="tabs__pane">003</div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+        const node1 = document.querySelector("#node-1");
+        const node2 = document.querySelector("#node-2");
+        moduleTab.init(node1);
+        moduleTab.init(node2);
+    </script>
+</body>
+
+</html>

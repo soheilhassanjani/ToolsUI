@@ -1,0 +1,62 @@
+:root {
+    --acc-color-back: rgb(60, 60, 60);
+    --acc-color-select: rgb(50, 50, 50);
+    --acc-color-sub: rgb(40, 40, 40);
+}
+
+.accordion {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--acc-color-back);
+}
+
+.accordion__li {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.accordion__li:hover,
+.accordion__li--selected {
+    background-color: var(--acc-color-select);
+}
+
+.accordion__link {
+    width: 100%;
+    display: inline-block;
+    padding: 1rem .5rem;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+.accordion__li--have-sub>.accordion__link::before {
+    content: "";
+    padding: 3px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    left: 10%;
+    top: calc(50% - 6px);
+    transform: rotate(45deg);
+}
+
+
+.accordion__sub {
+    transition: max-height 1s cubic-bezier(0, 1, 0.5, .7);
+    max-height: 0px;
+    overflow: hidden;
+    background-color: var(--acc-color-sub);
+}
+
+.accordion__li--selected .accordion__sub {
+    max-height: 1000px !important;
+    -webkit-transition: max-height 1s ease-in-out !important;
+    transition: max-height 1s ease-in-out !important;
+}
